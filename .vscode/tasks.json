@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Kidex: Start app",
+      "type": "process",
+      "command": "node",
+      "windows": { "command": "${env:ProgramFiles}/nodejs/node.exe" },
+      "args": ["${workspaceFolder}/kidex/server.mjs"],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "kidex",
+        "pattern": { "regexp": "^(.+):(\\d+):\\s+(.*)$", "file": 1, "line": 2, "message": 3 },
+        "background": { "activeOnStart": true, "beginsPattern": "^Kidex", "endsPattern": "^Kidex is ready:" }
+      },
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    }
+  ]
+}
